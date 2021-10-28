@@ -62,6 +62,8 @@ namespace ProyectoMigracion.API
             services.AddTransient<ISolicitudRepository, SolicitudRepository>();
             services.AddTransient<IPersonaService, PersonaService>();
             services.AddTransient<IHelperImage, ImageService>();
+            services.AddTransient<ISolicitudService, SolicitudService>();
+            services.AddTransient<IEstadoService, EstadoService>();
 
             //Configuracion del AutoMapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
