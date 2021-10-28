@@ -9,6 +9,7 @@ namespace ProyectoMigracion.Infrastructure.AutoMapper
         public AutoMapperConfiguration()
         {
             CreateMap<Persona, PersonaDTO>().ReverseMap();
+            CreateMap<Solicitud, SolicitudDTO>().ReverseMap();
         }
     }
 }
