@@ -14,9 +14,11 @@ namespace ProyectoMigracion.Core.Services
         {
             _personaRepository = personaRepository;
         }
-        public async Task<List<Persona>> GetPersonas()
+        public async Task<List<Persona>> GetPersonas(string fotoPath)
         {
-            return await _personaRepository.GetPersonas();
+            var personas = await _personaRepository.GetPersonas();
+            personas = personas.Select(x => { x.Foto = string.Concat(fotoPath, "/", x.Foto); return x; }).ToList();
+            return personas;
         }
         public async Task<Persona> GetPersona(int id)
         {

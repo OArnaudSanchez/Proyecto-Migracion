@@ -29,7 +29,8 @@ namespace ProyectoMigracion.API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<PersonaDTO>>> GetAll()
         {
-            var personas = await _personaService.GetPersonas();
+            var fotoPath = GetFotoPath();
+            var personas = await _personaService.GetPersonas(fotoPath);
             var personasDTO = _mapper.Map<List<PersonaDTO>>(personas);
             return Ok(personasDTO);
         }
@@ -38,6 +39,7 @@ namespace ProyectoMigracion.API.Controllers
         public async Task<ActionResult<PersonaDTO>> Get(int id)
         {
             var persona = await _personaService.GetPersona(id);
+            persona.Foto = string.Concat(GetFotoPath(), "/", persona.Foto);
             var personaDTO = _mapper.Map<PersonaDTO>(persona);
             return Ok(personaDTO);
         }
@@ -76,6 +78,12 @@ namespace ProyectoMigracion.API.Controllers
             var image = await _personaService.GetPersona(id);
             _helperImage.DeleteImage(image.Foto, _directory);
             return true;
+        }
+
+        private string GetFotoPath()
+        {
+            var path = $"{Request.Scheme}://{Request.Host.Value}{Request.PathBase}/Archivos";
+            return path;
         }
     }
 }
