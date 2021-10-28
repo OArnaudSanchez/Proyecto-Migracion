@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ProyectoMigracion.Core.DTOs;
 using ProyectoMigracion.Core.Entities;
 using ProyectoMigracion.Core.Interfaces;
+using ProyectoMigracion.Core.QueryFilters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,9 @@ namespace ProyectoMigracion.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<SolicitudDTO>>> GetAll()
+        public async Task<ActionResult<List<SolicitudDTO>>> GetAll([FromQuery] SolicitudQueryFilter filters)
         {
-            var solicitudes = await _solicitudService.GetSolicitudes();
+            var solicitudes = await _solicitudService.GetSolicitudes(filters);
             var solicitudesDTO = _mapper.Map<List<SolicitudDTO>>(solicitudes);
             return Ok(solicitudesDTO);
         }

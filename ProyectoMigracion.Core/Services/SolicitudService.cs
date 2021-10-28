@@ -1,8 +1,10 @@
 ﻿using ProyectoMigracion.Core.Entities;
 using ProyectoMigracion.Core.Exceptions;
 using ProyectoMigracion.Core.Interfaces;
+using ProyectoMigracion.Core.QueryFilters;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProyectoMigracion.Core.Services
@@ -18,9 +20,12 @@ namespace ProyectoMigracion.Core.Services
             _personaService = personaService;
             _estadoService = estadoService;
         }
-        public async Task<List<Solicitud>> GetSolicitudes()
+        public async Task<List<Solicitud>> GetSolicitudes(SolicitudQueryFilter filters)
         {
-            return await _solicitudRepository.GetSolicitudes();
+            var solicitudes = await _solicitudRepository.GetSolicitudes();
+            solicitudes = filters.IdSolicitud > 0 ? solicitudes.Where(x => x.Id == filters.IdSolicitud).ToList() : solicitudes;
+            solicitudes = filters.NombreEstado != null ? solicitudes.Where(x => x.NombreEstado.ToUpper().Contains(filters.NombreEstado.ToUpper())).ToList() : solicitudes;
+            return solicitudes;
         }
         public async Task<Solicitud> GetSolicitud(int id)
         {
