@@ -13,6 +13,9 @@ using ProyectoMigracion.Infrastructure.Filters;
 using ProyectoMigracion.Infrastructure.Repositories;
 using AutoMapper;
 using System;
+using ProyectoMigracion.Infrastructure.Services;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace ProyectoMigracion.API
 {
@@ -58,6 +61,7 @@ namespace ProyectoMigracion.API
             services.AddTransient<IEstadoRepository, EstadoRepository>();
             services.AddTransient<ISolicitudRepository, SolicitudRepository>();
             services.AddTransient<IPersonaService, PersonaService>();
+            services.AddTransient<IHelperImage, ImageService>();
 
             //Configuracion del AutoMapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -72,6 +76,14 @@ namespace ProyectoMigracion.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProyectoMigracion.API v1"));
             }
+
+            //Configuracion para guardar la imagen en el servidor
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                               Path.Combine(env.ContentRootPath, "Archivos")),
+                RequestPath = "/Archivos"
+            });
 
             app.UseHttpsRedirection();
 
