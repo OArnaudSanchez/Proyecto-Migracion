@@ -50,6 +50,11 @@ namespace ProyectoMigracion.API
             {
                 options.Filters.Add<ValidationFilter>();
             });
+
+            //Inyeccion de dependencias de los servicios
+            services.AddTransient<IPersonaRepository, PersonaRepository>();
+            services.AddTransient<IEstadoRepository, EstadoRepository>();
+            services.AddTransient<ISolicitudRepository, SolicitudRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
