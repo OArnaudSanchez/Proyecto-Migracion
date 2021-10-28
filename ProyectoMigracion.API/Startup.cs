@@ -11,6 +11,8 @@ using ProyectoMigracion.Core.Services;
 using ProyectoMigracion.Infrastructure.Data;
 using ProyectoMigracion.Infrastructure.Filters;
 using ProyectoMigracion.Infrastructure.Repositories;
+using AutoMapper;
+using System;
 
 namespace ProyectoMigracion.API
 {
@@ -55,6 +57,10 @@ namespace ProyectoMigracion.API
             services.AddTransient<IPersonaRepository, PersonaRepository>();
             services.AddTransient<IEstadoRepository, EstadoRepository>();
             services.AddTransient<ISolicitudRepository, SolicitudRepository>();
+            services.AddTransient<IPersonaService, PersonaService>();
+
+            //Configuracion del AutoMapper
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
