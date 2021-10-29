@@ -1,22 +1,53 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Login',
+    component: () => import('@/views/Login.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/home',
+    name: 'Home',
+    component: () => import('@/views/Home.vue')
+  },
+  {
+    path: '/personas',
+    name: 'Personas',
+    component: () => import('@/views/Personas.vue')
+  },
+  {
+    path: '/agregarPersona',
+    name: 'AgregarPersona',
+    component: () => import('@/views/AgregarPersona.vue')
+  },
+  {
+    path: '/personas/:id',
+    name: 'EditPersona',
+    component: () => import('@/views/EditPersona.vue')
+  },
+  {
+    path: '/solicitudes',
+    name: 'Solicitudes',
+    component: () => import('@/views/Solicitudes.vue')
+  },
+  {
+    path: '/agregarSolicitud',
+    name: 'AgregarSolicitud',
+    component: () => import('@/views/AgregarSolicitud.vue')
+  },
+  {
+    path: '/estados',
+    name: 'Estados',
+    component: () => import('@/views/Estados.vue')
+  },
+  {
+    path: '/agregarEstado',
+    name: 'AgregarEstado',
+    component: () => import('@/views/AgregarEstado.vue')
   }
 ]
 
