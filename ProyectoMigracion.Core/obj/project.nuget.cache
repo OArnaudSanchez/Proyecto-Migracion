@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "ie5l08vj5salh/4XTdiKLuu7F4J80wkoequYIaFJa0unYfG9RCXmXEWklo9PHICcQ0XxPV6VZD8hGkFceW7YIg==",
+  "dgSpecHash": "XAKqCgZbEy8UCZVQ+Jzo+dfWhEwx2s7YdXxQaCRWrSRD45h823jdzQoR8mlo2B8A2lnIEV3hxxU9j01piMudRA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Oasan\\Desktop\\Prueba\\ProyectoMigracion\\ProyectoMigracion.Core\\ProyectoMigracion.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Oasan\\.nuget\\packages\\fluentvalidation\\10.3.4\\fluentvalidation.10.3.4.nupkg.sha512",
+    "C:\\Users\\Oasan\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.4\\fluentvalidation.aspnetcore.10.3.4.nupkg.sha512",
+    "C:\\Users\\Oasan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.4\\fluentvalidation.dependencyinjectionextensions.10.3.4.nupkg.sha512",
+    "C:\\Users\\Oasan\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.11\\microsoft.aspnetcore.http.features.5.0.11.nupkg.sha512",
+    "C:\\Users\\Oasan\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\Oasan\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Oasan\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

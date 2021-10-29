@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 C:\Users\Oasan\Desktop\Prueba\ProyectoMigracion\ProyectoMigracion.Core\bin\Debug\net5.0\ProyectoMigracion.Core.deps.json
 C:\Users\Oasan\Desktop\Prueba\ProyectoMigracion\ProyectoMigracion.Core\bin\Debug\net5.0\ProyectoMigracion.Core.dll
 C:\Users\Oasan\Desktop\Prueba\ProyectoMigracion\ProyectoMigracion.Core\bin\Debug\net5.0\ref\ProyectoMigracion.Core.dll
 C:\Users\Oasan\Desktop\Prueba\ProyectoMigracion\ProyectoMigracion.Core\bin\Debug\net5.0\ProyectoMigracion.Core.pdb
 C:\Users\Oasan\Desktop\Prueba\ProyectoMigracion\ProyectoMigracion.Core\obj\Debug\net5.0\ProyectoMigracion.Core.csproj.AssemblyReference.cache
+=======
+>>>>>>> BackEnd
 C:\Users\Oasan\Desktop\Prueba\ProyectoMigracion\ProyectoMigracion.Core\obj\Debug\net5.0\ProyectoMigracion.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Oasan\Desktop\Prueba\ProyectoMigracion\ProyectoMigracion.Core\obj\Debug\net5.0\ProyectoMigracion.Core.AssemblyInfoInputs.cache
 C:\Users\Oasan\Desktop\Prueba\ProyectoMigracion\ProyectoMigracion.Core\obj\Debug\net5.0\ProyectoMigracion.Core.AssemblyInfo.cs
