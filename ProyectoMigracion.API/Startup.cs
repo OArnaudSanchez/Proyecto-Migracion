@@ -16,6 +16,7 @@ using System;
 using ProyectoMigracion.Infrastructure.Services;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using FluentValidation.AspNetCore;
 
 namespace ProyectoMigracion.API
 {
@@ -54,6 +55,10 @@ namespace ProyectoMigracion.API
             services.AddMvc(options =>
             {
                 options.Filters.Add<ValidationFilter>();
+            })
+            .AddFluentValidation(options =>
+            {
+               options.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
             });
 
             //Inyeccion de dependencias de los servicios

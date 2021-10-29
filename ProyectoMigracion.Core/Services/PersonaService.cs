@@ -29,6 +29,9 @@ namespace ProyectoMigracion.Core.Services
             if (persona == null)
                 throw new ApiException("Parametro Invalido", 400);
 
+            if (persona.Sexo?.ToUpper() != "M" || persona.Sexo?.ToUpper() != "F")
+                throw new ApiException("El valor de genero permitido es M / F", 400);
+
             persona.Id = 0;
             persona.Sexo = persona.Sexo?.ToUpper();
             var personas = await _personaRepository.GetPersonas();
