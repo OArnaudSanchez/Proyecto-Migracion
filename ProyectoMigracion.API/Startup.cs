@@ -72,6 +72,9 @@ namespace ProyectoMigracion.API
 
             //Configuracion del AutoMapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            //Configuracion de corrs
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -95,6 +98,8 @@ namespace ProyectoMigracion.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(builder => builder.WithOrigins("*").WithMethods("*").WithHeaders("*"));
 
             app.UseAuthorization();
 
